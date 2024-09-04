@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VG-Full Customize</title>
     <link rel="stylesheet" href="index.css">
-    <title>VG-Full customize</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
-    <div class="card">
+    <div class="card" id="cardContainer">
         <!--Image-->
         <img class="card_image" src="Assets/Image.png">
         <img class="base" src="Assets/Base/No_Nation/NU_N_Base.png">
@@ -23,5 +24,18 @@
         <p class="shield">5000</p>
     </div>
 
+    <button id="saveButton">Save as Image</button>
+
+    <script>
+        document.getElementById("saveButton").addEventListener("click", function() {
+            html2canvas(document.getElementById("cardContainer")).then(function(canvas) {
+                var image = canvas.toDataURL("image/png");
+                var link = document.createElement("a");
+                link.href = image;
+                link.download = "card-image.png";
+                link.click();
+            });
+        });
+    </script>
 </body>
 </html>
