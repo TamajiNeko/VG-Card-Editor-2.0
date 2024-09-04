@@ -9,17 +9,16 @@
 </head>
 <body>
     <div class="card" id="cardContainer">
-        <!--Image-->
+        <!-- Images -->
         <img class="card_image" src="Assets/Image.png">
         <img class="base" src="Assets/Base/No_Nation/NU_N_Base.png">
         <img class="base" src="Assets/Base/No_Nation/N_Grade_Base.png">
         <img class="base" src="Assets/Base/Shield/N_Shield.png">
 
-        <!--Text-->
+        <!-- Text -->
         <p class="name">Card Name</p>
         <p class="power_BG">10000</p>
         <p class="power">10000</p>
-
         <p class="shield_BG">5000</p>
         <p class="shield">5000</p>
     </div>
@@ -28,12 +27,19 @@
 
     <script>
         document.getElementById("saveButton").addEventListener("click", function() {
-            html2canvas(document.getElementById("cardContainer")).then(function(canvas) {
+            var cardElement = document.getElementById("cardContainer");
+            cardElement.classList.add("full-size");
+
+            html2canvas(cardElement, {
+                scale: 1  // Adjust the scale if you need a higher resolution
+            }).then(function(canvas) {
                 var image = canvas.toDataURL("image/png");
                 var link = document.createElement("a");
                 link.href = image;
                 link.download = "card-image.png";
                 link.click();
+
+                cardElement.classList.remove("full-size");
             });
         });
     </script>
