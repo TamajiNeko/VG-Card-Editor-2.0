@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Font */
+@font-face {
+    font-family: "power";
+    src: url("Assets/Font/Anzeigen Grotesk D Regular.otf");
+}
+
+@font-face {
+    font-family: "impact";
+    src: url("Assets/Font/impact.ttf");
+}
+
+/* Main */
+.card {
+    width: 2805px;
+    height: 4091px;
+    position: absolute;
+    left: 1%;
+    top: 1.5%;
+    scale: 15%;
+    transform-origin: top left;
+    background-color: #f1f1f1;
+    border: 10px dashed #ccc;
+    border-radius: 120px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.base, .card_image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.power, .power_BG, .shield, .shield_BG{
+    position: absolute;
+    font-family: power;
+    text-align: center;
+}
+
+.power, .power_BG {
+    font-size: 155pt;
+    bottom: 160px;
+    left: 605px;
+    height: 180px;
+    width: 465px;
+    color: #cfc44c;
+    stroke: black;
+    stroke-width: 100px;
+    transform: skewX(-15.30deg);
+    
+}
+
+.power_BG {
+    -webkit-text-stroke: 20px #000;
+    color: #000;
+}
+
+.shield, .shield_BG {
+    font-size: 120pt;
+    height: 140px;
+    width: 350px;
+    bottom: 2375px;
+    left: 18px;
+    color: #e5d1a2;
+    stroke: black;
+    stroke-width: 100px;
+    transform: rotate(90deg);
+    
+}
+
+.shield_BG {
+    -webkit-text-stroke: 18px #000;
+    color: #000;
+}
+
+.name {
+    position: absolute;
+    font-family: impact;
+    width: 2060px;
+    height: 140px;
+    text-align: center;
+    bottom: 382px;
+    font-size: 92pt;
+    color: #000;
+    left: 50.35%;
+    transform: translateX(-50%) skewX(-20.5deg);
+}
