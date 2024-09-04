@@ -3,45 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VG-Full Customize</title>
     <link rel="stylesheet" href="index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <title>VG-Full customize</title>
 </head>
 <body>
-    <div class="card" id="cardContainer">
-        <!-- Images -->
+    <br>
+    <a id="ImageDownload" href="#" download="Image.png">Download this Card</a>
+    <div class="card" id="card">
+        <!--Image-->
         <img class="card_image" src="Assets/Image.png">
         <img class="base" src="Assets/Base/No_Nation/NU_N_Base.png">
         <img class="base" src="Assets/Base/No_Nation/N_Grade_Base.png">
         <img class="base" src="Assets/Base/Shield/N_Shield.png">
 
-        <!-- Text -->
+        <!--Text-->
         <p class="name">Card Name</p>
         <p class="power_BG">10000</p>
         <p class="power">10000</p>
+
         <p class="shield_BG">5000</p>
         <p class="shield">5000</p>
     </div>
-
-    <button id="saveButton">Save as Image</button>
-
-    <script>
-        document.getElementById("saveButton").addEventListener("click", function() {
-            var cardElement = document.getElementById("cardContainer");
-            cardElement.classList.add("full-size");
-
-            html2canvas(cardElement, {
-                scale: 1  // Adjust the scale if you need a higher resolution
-            }).then(function(canvas) {
-                var image = canvas.toDataURL("image/png");
-                var link = document.createElement("a");
-                link.href = image;
-                link.download = "card-image.png";
-                link.click();
-
-                cardElement.classList.remove("full-size");
-            });
-        });
+    <script> const canvas = document.getElementById("card");
+    const ctx = canvas.getContext("2d");
+    const DownloadCanavas = document.getElementById("ImageDownload");
+    const DLcv = canvas.toDataURL("image.png");
+    DLcv.DownloadCanavas = DLcv;
     </script>
 </body>
 </html>
