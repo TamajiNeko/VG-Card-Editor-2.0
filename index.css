@@ -19,17 +19,22 @@
 }
 
 /* Main */
+
+.card-body {
+    position: relative;
+    width: 420.75px;
+    height: 613.65px;
+    overflow: hidden;
+}
+
 .card {
     width: 2805px;
     height: 4091px;
-    position: relative;
-    left: 1%;
     scale: 15%;
     transform-origin: top left;
     background-color: #f1f1f1;
     border: 10px dashed #ccc;
     border-radius: 120px;
-    overflow: hidden;
     box-sizing: border-box;
 }
 
