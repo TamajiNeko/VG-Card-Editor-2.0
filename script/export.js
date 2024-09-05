@@ -7,7 +7,7 @@ document.getElementById("export-button").addEventListener("click", function () {
     // Capture the card container with transparent background
     html2canvas(cardElement, {
         backgroundColor: null,  // Set the background to transparent
-        useCORS: true           // Enable cross-origin resource sharing if needed
+        //useCORS: true           // Enable cross-origin resource sharing if needed
     }).then(function (canvas) {
         var image = canvas.toDataURL("image/png");
 
