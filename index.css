@@ -33,7 +33,6 @@
     scale: 15%;
     transform-origin: top left;
     background-color: #f1f1f1;
-    border: 10px dashed #ccc;
     border-radius: 120px;
     box-sizing: border-box;
 }
@@ -53,14 +52,13 @@
 .power, .power_BG {
     font-size: 155pt;
     bottom: 160px;
-    left: 605px;
-    height: 180px;
+    left: 615px;
+    height: 182px;
     width: 465px;
     color: #cfc44c;
     stroke: black;
     stroke-width: 100px;
     transform: skewX(-15.30deg);
-    
 }
 
 .power_BG {
@@ -69,16 +67,16 @@
 }
 
 .shield, .shield_BG {
+    text-align: center;
     font-size: 120pt;
     height: 140px;
     width: 350px;
-    bottom: 2375px;
+    bottom: 2382px;
     left: 18px;
     color: #e5d1a2;
     stroke: black;
     stroke-width: 100px;
     transform: rotate(90deg);
-    
 }
 
 .shield_BG {
@@ -89,12 +87,12 @@
 .name {
     position: absolute;
     font-family: impact;
-    width: 2060px;
+    width: 2075px;
     height: 140px;
     text-align: center;
-    bottom: 382px;
+    bottom: 384px;
     font-size: 92pt;
     color: #000;
-    left: 50.35%;
+    left: 50.37%;
     transform: translateX(-50%) skewX(-20.5deg);
 }
