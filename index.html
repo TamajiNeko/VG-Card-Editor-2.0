@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
-    <button id="saveButton">Save as Image</button>
+    <button id="export-button">Save as Image</button>
     <div class="card-body">
         <div class="card" id="cardContainer">
             <!-- Images -->
@@ -27,21 +27,23 @@
     </div>
 
     <script>
-        document.getElementById("saveButton").addEventListener("click", function() {
-            var cardElement = document.getElementById("cardContainer");
-            cardElement.style.scale = "100%";
+    document.getElementById("export-button").addEventListener("click", function () {
+    var cardElement = document.getElementById("cardContainer");
+    
+    cardElement.style.transform = "scale(80%)";
+    html2canvas(cardElement, {
+        backgroundColor: null,
+    }).then(function (canvas) {
+        var image = canvas.toDataURL("image/png");
 
-            html2canvas(cardElement, {
-            }).then(function(canvas) {
-                var image = canvas.toDataURL("image/png");
-
-                var link = document.createElement("a");
-                link.href = image;
-                link.download = "card-image.png";
-                link.click();
-                cardElement.style.scale = "15%";
-            });
-        });
+        var link = document.createElement("a");
+        link.href = image;
+        link.download = "card-image.png";
+        link.click();
+        
+        cardElement.style.transform = "scale(15%)";
+    });
+});
     </script>
 
 </body>
