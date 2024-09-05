@@ -3,7 +3,6 @@ document.getElementById("export-button").addEventListener("click", function () {
 
     // Set scaling using percentage values as you prefer
     cardElement.style.transform = "scale(80%)";
-    cardElement.style.transformOrigin = "top left";  // Ensure scaling starts from the top left corner
 
     // Capture the card container with transparent background
     html2canvas(cardElement, {
