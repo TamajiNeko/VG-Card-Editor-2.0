@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
+    <button id="export-button">Save as Image</button>
     <div class="card-body">
         <div class="card" id="cardContainer">
             <!-- Images -->
@@ -22,11 +23,26 @@
             <p class="power">10000</p>
             <p class="shield_BG">5000</p>
             <p class="shield">5000</p>
-        </div>
     </div>
-    <button id="export-button">Export this Card</button>
+    </div>
 
-    <script src="script/export.js"></script>
+    <script>
+        document.getElementById("export-button").addEventListener("click", function() {
+            var cardElement = document.getElementById("cardContainer");
+            cardElement.style.scale = "80%";
+
+            html2canvas(cardElement, {
+            }).then(function(canvas) {
+                var image = canvas.toDataURL("image/png");
+
+                var link = document.createElement("a");
+                link.href = image;
+                link.download = "card-image.png";
+                link.click();
+                cardElement.style.scale = "15%";
+            });
+        });
+    </script>
 
 </body>
 </html>
