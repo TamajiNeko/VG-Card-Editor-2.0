@@ -1,15 +1,17 @@
-document.getElementById("saveButton").addEventListener("click", function() {
+document.getElementById("export-button").addEventListener("click", function () {
     var cardElement = document.getElementById("cardContainer");
-    cardElement.style.scale = "80%";
-
+    
+    cardElement.style.transform = "scale(80%)";
     html2canvas(cardElement, {
-    }).then(function(canvas) {
+        backgroundColor: null,
+    }).then(function (canvas) {
         var image = canvas.toDataURL("image/png");
 
         var link = document.createElement("a");
         link.href = image;
         link.download = "card-image.png";
         link.click();
-        cardElement.style.scale = "15%";
+        
+        cardElement.style.transform = "scale(15%)";
     });
 });
