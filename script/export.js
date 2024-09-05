@@ -4,7 +4,6 @@ document.getElementById("export-button").addEventListener("click", function () {
     cardElement.style.transform = "scale(80%)";
     html2canvas(cardElement, {
         backgroundColor: null,
-        useCORS: true
     }).then(function (canvas) {
         var image = canvas.toDataURL("image/png");
 
