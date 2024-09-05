@@ -26,11 +26,7 @@
 
     <script>
         document.getElementById("saveButton").addEventListener("click", function() {
-            var cardElement = document.getElementById("cardContainer");
-
-            html2canvas(cardElement, {
-                scale: 1 
-            }).then(function(canvas) {
+            html2canvas(document.getElementById("cardContainer")).then(function(canvas) {
                 var image = canvas.toDataURL("image/png");
                 var link = document.createElement("a");
                 link.href = image;
