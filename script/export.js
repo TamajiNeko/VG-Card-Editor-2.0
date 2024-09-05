@@ -1,7 +1,7 @@
 document.getElementById("export-button").addEventListener("click", function () {
     var cardElement = document.getElementById("cardContainer");
 
-    cardElement.style.transform = "scale(80%)";
+    cardElement.style.scale = "80%";
     html2canvas(cardElement, {
         backgroundColor: null,
     }).then(function (canvas) {
@@ -12,6 +12,6 @@ document.getElementById("export-button").addEventListener("click", function () {
         link.download = "card-image.png";
         link.click();
         
-        cardElement.style.transform = "scale(15%)";
+        cardElement.style.scale = "15%";
     });
 });
