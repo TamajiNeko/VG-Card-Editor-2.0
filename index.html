@@ -29,7 +29,7 @@
     <script>
         document.getElementById("saveButton").addEventListener("click", function() {
             var cardElement = document.getElementById("cardContainer");
-            cardElement.style.scale = "80%";
+            cardElement.style.scale = "100%";
 
             html2canvas(cardElement, {
             }).then(function(canvas) {
@@ -39,7 +39,7 @@
                 link.href = image;
                 link.download = "card-image.png";
                 link.click();
-                //cardElement.style.scale = "15%";
+                cardElement.style.scale = "15%";
             });
         });
     </script>
