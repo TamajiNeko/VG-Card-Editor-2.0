@@ -19,6 +19,8 @@
 
             <!-- Text -->
             <p class="name">Card Name</p>
+            <p class="grade_BG">2</p>
+            <p class="grade">2</p>
             <p class="power_BG">10000</p>
             <p class="power">10000</p>
             <p class="shield_BG">5000</p>
@@ -26,25 +28,7 @@
     </div>
     </div>
 
-    <script>
-        document.getElementById("export-button").addEventListener("click", function () {
-        var cardElement = document.getElementById("cardContainer");
-    
-        cardElement.style.scale = "100%";
-        html2canvas(cardElement, {
-        backgroundColor: null,
-        }).then(function (canvas) {
-        var image = canvas.toDataURL("image/png");
-
-        var link = document.createElement("a");
-        link.href = image;
-        link.download = "card-image.png";
-        link.click();
-        
-        cardElement.style.scale = "15%";
-        });
-    });
-    </script>
+    <script src="script/export.js"></script>
 
 </body>
 </html>

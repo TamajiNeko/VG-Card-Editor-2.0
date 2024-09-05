@@ -43,10 +43,24 @@
     height: 100%;
 }
 
-.power, .power_BG, .shield, .shield_BG{
+.power, .power_BG, .shield, .shield_BG, .grade, .grade_BG{
     position: absolute;
     font-family: power;
     text-align: center;
+}
+
+.grade, .grade_BG {
+    font-size: 200pt;
+    bottom: 3785px;
+    left: 115px;
+    height: 250px;
+    width: 200px;
+    color: #ffff;
+}
+
+.grade_BG {
+    -webkit-text-stroke: 24px #000;
+    color: #000;
 }
 
 .power, .power_BG {
@@ -56,8 +70,6 @@
     height: 182px;
     width: 465px;
     color: #cfc44c;
-    stroke: black;
-    stroke-width: 100px;
     transform: skewX(-15.30deg);
 }
 
@@ -74,8 +86,6 @@
     bottom: 2382px;
     left: 18px;
     color: #e5d1a2;
-    stroke: black;
-    stroke-width: 100px;
     transform: rotate(90deg);
 }
 
