@@ -28,19 +28,16 @@
     <script>
         document.getElementById("saveButton").addEventListener("click", function() {
             var cardElement = document.getElementById("cardContainer");
+            cardElement.style.scale = "100%";
 
-            // Capture the .card element content
             html2canvas(cardElement, {
-                scale: 2  // Increase resolution if needed
             }).then(function(canvas) {
-                // Convert canvas to image data URL
                 var image = canvas.toDataURL("image/png");
 
-                // Create a link element to download the image
                 var link = document.createElement("a");
                 link.href = image;
                 link.download = "card-image.png";
-                link.click();  // Trigger the download
+                link.click();
             });
         });
     </script>
