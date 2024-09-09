@@ -32,7 +32,20 @@
             <input class="shield" id="ishield" type="number" placeholder="5000">
         </div>
     </div>
-    <script src="Script/export.js"></script>
+    <script>
+        document.getElementById("export-button").addEventListener("click", function () {
+    var cardElement = document.getElementById("cardContainer");
+
+    cardElement.style.scale = "100%";
+    html2canvas(cardElement, {
+    backgroundColor: null,
+    }).then(function (canvas) {
+    var image1 = canvas.toDataURL("image/png");
+
+    console.log(image1)
+    });
+});
+    </script>
     <script src="Script/update.js"></script>
 </body>
 </html>
