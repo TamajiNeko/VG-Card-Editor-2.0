@@ -32,7 +32,36 @@
             <input class="shield" id="ishield" type="number" placeholder="5000">
         </div>
     </div>
-    <script src="Script/export.js"></script>
+    <script>
+        document.getElementById("export-button").addEventListener("click", function () {
+    var cardElement = document.getElementById("cardContainer");
+
+    // Temporarily save the current transform scale
+    const originalTransform = cardElement.style.transform;
+
+    // Reset the scale and any transform before taking the snapshot
+    cardElement.style.transform = "scale(1)";
+
+    // Use html2canvas to capture the element
+    html2canvas(cardElement, {
+        backgroundColor: null, // Keeps the background transparent
+        useCORS: true, // In case you're loading images from external URLs
+        scale: 2 // Increase scale for better resolution (optional)
+    }).then(function (canvas) {
+        var image = canvas.toDataURL("image/png");
+
+        // Create a link to download the image
+        var link = document.createElement("a");
+        link.href = image;
+        link.download = "card-image.png";
+        link.click();
+
+        // Revert the transform scale after snapshot
+        cardElement.style.transform = originalTransform;
+    });
+});
+
+    </script>
     <script src="Script/update.js"></script>
 </body>
 </html>
