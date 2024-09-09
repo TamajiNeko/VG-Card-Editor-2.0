@@ -40,7 +40,7 @@
     const originalTransform = cardElement.style.transform;
 
     // Reset the scale and any transform before taking the snapshot
-    cardElement.style.transform = "scale(1)";
+    cardElement.style.scale = "1";
 
     // Use html2canvas to capture the element
     html2canvas(cardElement, {
@@ -55,9 +55,6 @@
         link.href = image;
         link.download = "card-image.png";
         link.click();
-
-        // Revert the transform scale after snapshot
-        cardElement.style.transform = originalTransform;
     });
 });
 
