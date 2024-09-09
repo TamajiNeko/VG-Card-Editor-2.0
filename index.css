@@ -20,6 +20,14 @@
 
 /* Main */
 
+input, input:focus, input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+
 .card-body {
     position: relative;
     width: 420.75px;
@@ -51,29 +59,39 @@
 
 .grade, .grade_BG {
     font-size: 200pt;
-    bottom: 3785px;
+    bottom: 3771px;
     left: 115px;
     height: 250px;
     width: 200px;
     color: #ffff;
 }
 
+.grade::placeholder{
+    color: #ffff;
+}
 .grade_BG {
     -webkit-text-stroke: 24px #000;
     color: #000;
+    bottom: 3785px;
 }
 
 .power, .power_BG {
     font-size: 155pt;
-    bottom: 160px;
-    left: 615px;
+    bottom: 145px;
+    left: 610px;
     height: 182px;
     width: 465px;
     color: #cfc44c;
     transform: skewX(-15.30deg);
 }
 
+.power::placeholder {
+    color: #cfc44c;
+}
+
 .power_BG {
+    bottom: 162px;
+    left: 615px;
     -webkit-text-stroke: 20px #000;
     color: #000;
 }
@@ -83,26 +101,35 @@
     font-size: 120pt;
     height: 140px;
     width: 350px;
-    bottom: 2382px;
-    left: 18px;
+    bottom: 2384px;
+    left: 6px;
     color: #e5d1a2;
     transform: rotate(90deg);
+}
+
+.shield::placeholder {
+    color: #e5d1a2;
 }
 
 .shield_BG {
     -webkit-text-stroke: 18px #000;
     color: #000;
+    left: 18px;
 }
 
 .name {
     position: absolute;
     font-family: impact;
     width: 2075px;
-    height: 140px;
+    height: 130px;
     text-align: center;
     bottom: 384px;
     font-size: 92pt;
     color: #000;
     left: 50.37%;
     transform: translateX(-50%) skewX(-20.5deg);
+}
+
+.name::placeholder {
+    color: #000;
 }
